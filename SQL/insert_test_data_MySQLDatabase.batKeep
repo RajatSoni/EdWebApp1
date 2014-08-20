@@ -1,0 +1,88 @@
+@echo on
+
+set currentdir = %CD%
+
+set hostname=%1
+set dbpassword=%2
+set ec=0
+
+if "%hostname%"=="" set ec=-1
+
+if "%dbpassword%"=="" set ec=-1
+
+if "%ec%"=="-1" goto errorInputParam
+
+:executeSQL
+
+cd "C:\Program Files\MySQL\MySQL Server 5.1\bin"
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Insert_employee_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Insert_projectCode_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_4_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_5_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_6_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_7_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_8_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_9_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11001_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11002_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11003_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11004_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11005_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11006_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11007_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11008_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11009_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11010_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11011_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11012_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11013_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11014_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11015_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11016_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11017_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11018_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11019_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11020_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysql -uedadmin -ppassword -hlocalhost -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/test/test_Create_timesheet_11021_SQL.sql > C:/EdWebApps/SQL/MySQLDatabase.log
+
+goto finish
+
+
+:errorInputParam
+@echo Missing input parameters (hostname or password).Format:RefreshMySQLDatabase.bat hostname password >> C:/EdWebApps/SQL/MySQLDatabase.log
+echo Missing input parameters (hostname or password). Format:RefreshMySQLDatabase.bat hostname password
+
+
+:finish
+cd /d C:\EdWebApps\SQL

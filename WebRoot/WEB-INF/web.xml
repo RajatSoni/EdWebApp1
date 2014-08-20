@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE web-app
+  PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+  "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+
+<web-app>
+
+   <context-param>
+     <param-name>log4j-init-file</param-name>
+     <param-value>/WEB-INF/log4j.properties</param-value>
+     <description>The file used to initialize log4j.</description>
+   </context-param>
+   
+   <!-- Front facing website email setting -->
+   <context-param>
+     <param-name>smtpServerName</param-name>
+     <param-value>relay-hosting.secureserver.net</param-value>
+   </context-param>
+   <context-param>
+     <param-name>smtpUserName</param-name>
+     <param-value>no-reply@employersdesk.com</param-value>
+   </context-param>
+   <context-param>
+     <param-name>password</param-name>
+     <param-value>edpassword</param-value>
+   </context-param>
+
+   <!-- EmployerDesk online application send email setting -->
+   <context-param>
+     <param-name>edAppSMTPServerName</param-name>
+     <param-value>localhost</param-value>
+   </context-param>
+   <context-param>
+     <param-name>edAppSMTPUserName</param-name>
+     <param-value>edadmin</param-value>
+   </context-param>
+   <context-param>
+     <param-name>edAppSMTPPassword</param-name>
+     <param-value>edadmin_12</param-value>
+   </context-param>
+
+   <!-- JDBC Setting -->
+   <context-param>
+     <param-name>jdbcLookupName</param-name>
+     <param-value>java:comp/env/jdbc/empdeskdb</param-value>
+   </context-param>
+   <context-param>
+     <param-name>database</param-name>
+     <param-value>mysql</param-value>
+   </context-param>
+
+   <context-param>
+     <param-name>usersLicense</param-name>
+     <param-value>MDAwMDA1MCwyMDA5MTAwODE1NDYwMCxlbXBsb3llcnNkZXNr</param-value>
+   </context-param>
+
+   <servlet>
+     <servlet-name>DBConnectionServlet</servlet-name>
+     <servlet-class>com.ed.db.DBConnectionServlet</servlet-class>
+     <load-on-startup>0</load-on-startup>
+   </servlet>
+
+   <servlet>
+     <servlet-name>ReportFormatServlet</servlet-name>
+     <servlet-class>com.ed.reports.ReportFormatServlet</servlet-class>
+     <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+     <servlet-name>ReportFormatServlet</servlet-name>  
+     <url-pattern>/jsp/reports/exportreport/*</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+     <servlet-name>FileUploadServlet</servlet-name>
+     <servlet-class>com.ed.fileupload.FileUploadServlet</servlet-class>
+     <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+     <servlet-name>FileUploadServlet</servlet-name>  
+     <url-pattern>/jsp/expense/expensefileupload/*</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+     <servlet-name>FileDeleteServlet</servlet-name>
+     <servlet-class>com.ed.fileupload.FileDeleteServlet</servlet-class>
+     <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+     <servlet-name>FileDeleteServlet</servlet-name>  
+     <url-pattern>/jsp/expense/expensefiledelete/*</url-pattern>
+   </servlet-mapping>
+   
+   <session-config>
+     <session-timeout>20</session-timeout>
+   </session-config>
+  
+   <!-- The Welcome File List -->
+   <welcome-file-list>
+     <welcome-file>index.html</welcome-file>
+   </welcome-file-list>   
+  
+  <resource-ref>
+    <description>MySQL Datasource</description>
+    <res-ref-name>jdbc/empdeskdb</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+
+  <taglib>
+    <taglib-uri>http://jakarta.apache.org/taglibs/log-1.0</taglib-uri>
+    <taglib-location>/WEB-INF/taglibs-log.tld</taglib-location>
+  </taglib>
+  
+  <servlet-mapping>
+    <servlet-name>jsp</servlet-name>
+    <url-pattern>*.jsp</url-pattern>
+ </servlet-mapping>
+    
+</web-app>
+

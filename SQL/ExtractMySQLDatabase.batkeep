@@ -1,0 +1,21 @@
+REM  /**
+REM   *  -- Please do not modify the contents of this file --
+REM   *  Description:This batch file is used to create employersdesk application tables
+REM   *
+REM   *
+REM   *
+REM   *
+REM   **/
+
+echo on
+echo %date% %time% > C:/EdWebApps/SQL/MySQLDatabase.log
+set currentdir = %CD%
+
+cd "C:\Program Files\MySQL\MySQL Server 5.1\bin"
+
+echo Creating application tables >> C:/EdWebApps/SQL/MySQLDatabase.log
+rem mysql -hlocalhost -uedadmin -ppassword -P3306 empdeskdb < C:/EdWebApps/SQL/mySql/ExtractDataFromAppTables.sql >> C:/EdWebApps/SQL/MySQLDatabase.log
+
+mysqldump -uedadmin -ppassword -hlocalhost -P3306 --no-create-info --skip-opt --quick empdeskdb employee >> C:/EdWebApps/SQL/mySql/extractdata/employee.sql
+
+cd /d C:\EdWebApps\SQL
